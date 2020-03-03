@@ -21,4 +21,10 @@ def self.create
    song_obj.name = song_name
    return song_obj
  end
+ 
+ def self.create_by_name(song_name)
+    song_obj= self.create
+    song_obj.name = song_name
+    return song_obj
+ end
 end
