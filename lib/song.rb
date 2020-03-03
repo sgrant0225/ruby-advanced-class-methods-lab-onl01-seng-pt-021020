@@ -27,4 +27,8 @@ def self.create
     song_obj.name = song_name
     return song_obj
  end
+ 
+ def find_by_name 
+ 
+ end
 end
