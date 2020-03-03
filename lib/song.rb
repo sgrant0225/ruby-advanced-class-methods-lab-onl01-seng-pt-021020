@@ -1,3 +1,5 @@
+require 'pry'
+
 class Song
   attr_accessor :name, :artist_name
   @@all = []
@@ -28,7 +30,17 @@ def self.create
     return song_obj
  end
  
- def find_by_name 
- 
+ def self.find_by_name(song_name) 
+   self.all.find{|song_obj| song_obj.name == song_name}
  end
+ 
+ def self.find_or_create_by_name(song_name)
+   self.find_by_name(song_name) || self.create_by_name(song_name)
+ end
+ 
+ def self.alphabetical
+    self.all.sort_by {|obj| obj.name}
+  end
+  
+  
 end
