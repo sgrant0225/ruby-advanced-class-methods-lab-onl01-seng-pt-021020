@@ -47,8 +47,7 @@ def self.create
     song_obj= self.new_by_name(song_info[1].gsub('.mp3', ''))
     song_obj.artist_name = song_info[0]
     song_obj
-
-  end
+end
   
   
 end
