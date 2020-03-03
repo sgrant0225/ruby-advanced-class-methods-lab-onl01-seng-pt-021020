@@ -42,5 +42,11 @@ def self.create
     self.all.sort_by {|obj| obj.name}
   end
   
-  
+  def self.new_from_filename(str)
+    song_info= str.split(' - ')
+    song_obj= self.new_by_name(song_info[1].gsub('.mp3', ''))
+    song_obj.artist_name = song_info[0]
+    song_obj
+
+  end
 end
